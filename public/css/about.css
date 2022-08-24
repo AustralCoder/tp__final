@@ -1,0 +1,22 @@
+.section__about{
+    display: flex;
+    padding: .1px;
+    margin: .1px;
+}
+
+
+.svg__about--size{
+    position: relative;
+    top: 10em;
+    overflow: hidden;
+    object-fit: cover;
+    filter: drop-shadow(3px 1px 1px);
+}
+
+
+.about__text--h2{
+    margin-top: 13em;
+    margin-right: 2em;
+    text-align: center;
+    
+}
