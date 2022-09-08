@@ -3,14 +3,11 @@ require('dotenv').config();
 const path = require('path');
 const mysql = require('mysql2');
 const nodemailer = require('nodemailer');
-const hbs = require('hbs')
-const { get } = require('http');
-const { getMaxListeners } = require('process');
+const hbs = require('hbs');
 const app = express();
 const PORT = process.env.PORT || 8080;
 const http = require('http');
-const fs = require('fs');
-
+const server = http.Server(app);
 
 //Conexión a la Base de Datos
 const conexion = mysql.createConnection({
@@ -21,12 +18,13 @@ const conexion = mysql.createConnection({
 }); 
 
 
+
 conexion.connect((err) => {
     if (err) {
         console.error(`Error en la conexión: ${err.stack}`)
         return;
     }
-    console.log(`Conectado a la Base de Datos ${process.env.DATABASE}`);
+    // console.log(`Conectado a la Base de Datos ${process.env.DATABASE}`);
 });  
 
 //Middelwares
@@ -58,7 +56,7 @@ app.post('/forum', (req, res) => {
 
     const { nombreAlbum, artista } = req.body;
 
-    console.log(nombreAlbum, artista);
+    // console.log(nombreAlbum, artista);
 
     if (nombreAlbum == '' || artista == '') {
         let validacion = 'Rellene los campos correctamente..';
@@ -97,8 +95,8 @@ app.post('/', (req, res) => {
             validacion
         });
     } else{
-        console.log(nombre);
-        console.log(email);
+        // console.log(nombre);
+        // console.log(email);
         
         async function envioMail(){
 
@@ -136,6 +134,7 @@ app.post('/', (req, res) => {
 
 
 
-app.listen(3000);
-console.log('Servidor corriendo en el puerto 3000');
+server.listen(PORT, () => {
+    console.log(`Escuchando al puerto http://localhost:${PORT}/`);
+  });
 
