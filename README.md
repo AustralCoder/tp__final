@@ -1,6 +1,8 @@
 # tp__final
 Trabajo final de la cursada para PWIT de la UTN
 
+Alumno: Jorge Nicolas Kelly
+
 ======PASOS PARA SU CORRECTO FUNCIONAMIENTO======================================================================
 
 1.Descargar y extraer el archivo .zip
