@@ -25,7 +25,7 @@ automaticamente le instalará las dependencias necesarias para el arranque de la
 
 6. vaya a localhost:3000 en su navegador y deberia estar operativo la pagina con la base de datos conectada y funcionando.
 
-
+7. El deploy en Heroku se envió por slack e igualmente esta en los enviroments de este repositorio en github.
 =======GRACIAS POR LEER============================================================================================
 
 
